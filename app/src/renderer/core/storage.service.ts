@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as path from 'path';
-import { pathExists, writeJSON, readJSON } from 'fs-extra';
+import { pathExistsSync, writeJSONSync, readJSONSync } from 'fs-extra';
 
 import { loadConfig } from '../../config';
 
@@ -9,24 +9,26 @@ const config = loadConfig();
 
 @Injectable()
 export class StorageService {
+    isLoaded = false;
     data: object | null;
     filename = path.resolve(config.getPath('userData'), 'data.json');
 
-    async load() {
-        if (!await pathExists(this.filename)) {
-            await writeJSON(this.filename, {});
+    load() {
+        if (!pathExistsSync(this.filename)) {
+            writeJSONSync(this.filename, {});
         }
 
-        this.data = await readJSON(this.filename);
+        this.data = readJSONSync(this.filename);
     }
 
-    async save() {
-        await writeJSON(this.filename, this.data || {});
+    save() {
+        writeJSONSync(this.filename, this.data || {});
     }
 
     get (name: string): any {
-        if (this.data === null) {
-            return null;
+        if (!this.isLoaded) {
+            this.load();
+            this.isLoaded = true;
         }
 
         return this.data[name];
@@ -38,5 +40,9 @@ export class StorageService {
         }
 
         this.data[name] = value;
+    }
+
+    remove(name: string) {
+        this.data[name] = null;
     }
 }

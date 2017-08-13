@@ -1,3 +1,35 @@
 <div class="LoginPage">
-    Login
+    <h1 class="LoginPage__title">
+        <img [src]="'assets/logo@2x.png'" class="LoginPage__logo" />
+    </h1>
+
+    <form (ngSubmit)="login()" class="LoginForm">
+        <h2 class="LoginForm__name">로그인</h2>
+
+        <p [class.show]="isErrorCaught" class="LoginForm__errorMessage">
+            {{errorMessage}}
+        </p>
+
+        <label for="email">이메일</label>
+        <input [(ngModel)]="model.email"
+               id="email"
+               name="email"
+               required
+               type="email" />
+
+        <label for="password">비밀번호</label>
+        <input [(ngModel)]="model.password"
+               id="password"
+               name="password"
+               required
+               type="password" />
+
+        <button type="submit">로그인</button>
+    </form>
+
+    <div class="LoginPage__footer">
+        <a class="LoginPage__registerBtn">
+            계정이 없으신가요? <b>가입하기</b>
+        </a>
+    </div>
 </div>

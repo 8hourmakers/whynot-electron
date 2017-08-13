@@ -1,3 +1,114 @@
 .LoginPage {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100%;
+    background-color: var(--color-main);
 
+    &__title {
+        display: flex;
+        margin: 0;
+        padding: 55px 0 45px 0;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+
+        & > img {
+            width: 62px;
+        }
+    }
+
+    &__footer {
+        width: 100%;
+        height: 70px;
+        background-color: lighten(rgb(63, 180, 251), 10%);
+
+        & > a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            font-size: 16px;
+            font-weight: 300;
+            text-decoration: none;
+            color: var(--color-white);
+            cursor: pointer;
+
+            & > b {
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+.LoginForm {
+    flex: 1;
+    padding: 0 36px;
+    width: 100%;
+
+    &__name {
+        margin: 0 0 24px 0;
+        padding: 0;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 1;
+        color: var(--color-white);
+    }
+
+    &__errorMessage {
+        display: none;
+        padding: 12px 16px;
+        margin: 0 0 24px 0;
+        border-radius: 4px;
+        background-color: #fa5252;
+        color: #fff;
+        font-size: 16px;
+        line-height: 1.25;
+
+        &.show {
+            display: block;
+        }
+    }
+
+    & > label {
+        display: block;
+        height: 16px;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 16px;
+        color: var(--color-white);
+    }
+
+    & > input {
+        display: block;
+        margin: 0 0 40px 0;
+        padding: 0;
+        width: 100%;
+        height: 34px;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 20px;
+        color: var(--color-white);
+        border: none;
+        border-bottom: 1px solid var(--color-white);
+        outline: 0;
+        background: transparent;
+    }
+
+    & > button[type="submit"] {
+        display: block;
+        margin: 60px auto 0 auto;
+        padding: 0;
+        width: 75%;
+        min-width: 200px;
+        height: 50px;
+        font-size: 20px;
+        font-weight: 500;
+        color: var(--color-white);
+        border: 1px solid var(--color-white);
+        background: transparent;
+        cursor: pointer;
+        transition: all .2s ease;
+    }
 }
