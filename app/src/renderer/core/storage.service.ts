@@ -40,9 +40,11 @@ export class StorageService {
         }
 
         this.data[name] = value;
+        this.save();
     }
 
     remove(name: string) {
         this.data[name] = null;
+        this.save();
     }
 }
