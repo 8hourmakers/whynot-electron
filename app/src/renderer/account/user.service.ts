@@ -24,6 +24,7 @@ export class UserService {
     }
 
     isTokenExists(): boolean {
+        console.log(this.storageService.data);
         return !!this.storageService.get('token');
     }
 

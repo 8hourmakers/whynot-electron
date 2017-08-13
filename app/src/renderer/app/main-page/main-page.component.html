@@ -1,3 +1,19 @@
 <div class="MainPage">
-    Main
+    <nav class="MainPage__nav">
+        <ul class="MainPage__tab">
+            <li *ngFor="let tab of tabs">
+                <a [routerLink]="[tab.value]"
+                   [routerLinkActive]="'active'">{{tab.name}}</a>
+            </li>
+        </ul>
+
+        <button [routerLink]="[settingTab.value]"
+                [routerLinkActive]="'active'"
+                class="MainPage__settingBtn">
+            <img name="normal" [src]="'assets/user@2x.png'" />
+            <img name="active" [src]="'assets/user__active@2x.png'" />
+        </button>
+    </nav>
+
+    <router-outlet></router-outlet>
 </div>

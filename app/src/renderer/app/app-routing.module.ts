@@ -6,12 +6,20 @@ import { AuthenticatedGuard } from '../account/authauthenticated.guard';
 import { LoginPageComponent } from '../account/login-page/login-page.component';
 import { RegisterPageComponent } from '../account/register-page/register-page.component';
 
+import { TodoHomeComponent } from '../todo/todo-home/todo-home.component';
+
 
 export const appRoutes: Routes = [
     {
         path: '',
         component: MainPageComponent,
-        canActivate: [AppAuthGuard]
+        canActivate: [AppAuthGuard],
+        children: [
+            {
+                path: '',
+                component: TodoHomeComponent
+            }
+        ]
     },
     {
         path: 'login',
