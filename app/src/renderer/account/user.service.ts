@@ -57,22 +57,34 @@ export class UserService {
     }
 
     async login(email: string, password: string): Promise<void> {
-        try {
-            const resp: UserDataResp = await this.http
-                .post<UserDataResp>(
-                    'http://8hourmakers.com/whynot/api/users/auth/',
-                    { email, password }
-                )
-                .toPromise();
+        const resp: UserDataResp = await this.http
+            .post<UserDataResp>(
+                'http://8hourmakers.com/whynot/api/users/auth/',
+                { email, password }
+            )
+            .toPromise();
 
-            this.storageService.set('token', resp.token);
-            this.userInfo = {
-                username: resp.username,
-                email: resp.email
-            };
-            this.hasLogin = true;
-        } catch (err) {
-            throw err;
-        }
+        this.storageService.set('token', resp.token);
+        this.userInfo = {
+            username: resp.username,
+            email: resp.email
+        };
+        this.hasLogin = true;
+    }
+
+    async register(username: string, email: string, password: string): Promise<void> {
+        const resp: UserDataResp = await this.http
+            .post<UserDataResp>(
+                'http://8hourmakers.com/whynot/api/users/',
+                { username, email, password }
+            )
+            .toPromise();
+
+        this.storageService.set('token', resp.token);
+        this.userInfo = {
+            username: resp.username,
+            email: resp.email
+        };
+        this.hasLogin = true;
     }
 }

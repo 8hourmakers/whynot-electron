@@ -1,0 +1,38 @@
+<div class="RegisterPage">
+    <div class="RegisterPage__title">
+        <button (click)="close()" class="RegisterPage__closeBtn">
+            <img [src]="'assets/close@2x.png'" />
+        </button>
+        <img [src]="'assets/logo@2x.png'" class="RegisterPage__logo" />
+    </div>
+
+    <form (ngSubmit)="registerNewAccount()" class="RegisterPage__form">
+        <h1>새로운 계정</h1>
+
+        <p [class.show]="isErrorCaught" class="RegisterPage__error">
+            {{errorMessage}}
+        </p>
+
+        <section>
+            <label for="registerEmail">이메일</label>
+            <input [(ngModel)]="model.email" id="registerEmail" name="email" required type="email" />
+        </section>
+
+        <section>
+            <label for="registerUsername">이름</label>
+            <input [(ngModel)]="model.username" id="registerUsername" name="username" required type="text" />
+        </section>
+
+        <section>
+            <label for="registerPW">비밀번호</label>
+            <input [(ngModel)]="model.password" id="registerPW" name="password" required type="password" />
+        </section>
+
+        <section>
+            <label for="registerPWConfirm">비밀번호 확인</label>
+            <input [(ngModel)]="model.passwordConfirm" id="registerPWConfirm" name="passwordConfirm" required type="password" />
+        </section>
+
+        <button type="submit">회원가입</button>
+    </form>
+</div>
