@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { StorageService } from '../core/storage.service';
 
 
 @Component({
@@ -6,6 +8,11 @@ import { Component } from '@angular/core';
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.less']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+    constructor(private storageService: StorageService) {
+    }
 
+    async ngOnInit() {
+        await this.storageService.load();
+    }
 }
