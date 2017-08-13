@@ -1,5 +1,5 @@
 {
-    "name": "whynot-desktop",
+    "name": "whynot-electron",
     "version": "1.0.0",
     "description": "",
     "main": "app/app.js",
@@ -11,7 +11,7 @@
     },
     "author": "8hourmakers <8hourmakers@gmail.com>",
     "repository": {
-        "url": "https://github.com/8hourmakers/whynot-desktop.git",
+        "url": "https://github.com/8hourmakers/whynot-electron.git",
         "type": "git"
     },
     "license": "MIT",
