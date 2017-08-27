@@ -13,8 +13,8 @@ export class AppWindow extends Window {
         super(templateUrl, {
             width: 375,
             height: 667,
-            minWidth: 300,
-            minHeight: 400
+            minWidth: 320,
+            minHeight: 480
         });
     }
 }
