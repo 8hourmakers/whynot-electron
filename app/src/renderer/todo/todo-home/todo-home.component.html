@@ -1,3 +1,57 @@
 <div class="TodoHome">
-    Todo Home
+    <div class="TodoHome__calendar">
+        <div class="TodoHome__calendarLeft">
+            <span>{{today | date:'dd'}}</span>
+            <label>
+                {{today | date:'MMM'}}<br />
+                {{today | date:'y'}}
+            </label>
+        </div>
+        <span class="TodoHome__calendarRight">
+            {{today | date:'EEEE'}}
+        </span>
+    </div>
+
+    <ul class="TodoHome__list">
+        <li>
+            <app-todo-item></app-todo-item>
+        </li>
+
+        <li>
+            <app-todo-item></app-todo-item>
+        </li>
+
+        <li>
+            <app-todo-item></app-todo-item>
+        </li>
+        <li>
+            <app-todo-item></app-todo-item>
+        </li>
+
+        <li>
+            <app-todo-item></app-todo-item>
+        </li>
+
+        <li>
+            <app-todo-item></app-todo-item>
+        </li>
+        <li>
+            <app-todo-item></app-todo-item>
+        </li>
+        <li>
+            <app-todo-item></app-todo-item>
+        </li>
+        <li>
+            <app-todo-item></app-todo-item>
+        </li>
+        <li>
+            <app-todo-item></app-todo-item>
+        </li>
+        <li>
+            <app-todo-item></app-todo-item>
+        </li>
+        <li>
+            <app-todo-item></app-todo-item>
+        </li>
+    </ul>
 </div>

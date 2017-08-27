@@ -1,0 +1,30 @@
+<div class="TodoCalendar">
+    <header>
+        <app-month-picker (monthSelect)="navMonth($event)"></app-month-picker>
+        <button class="TodoCalendar__searchBtn"></button>
+    </header>
+
+    <section>
+        <div class="TodoCalendar__label">
+            <span>S</span>
+            <span>M</span>
+            <span>T</span>
+            <span>W</span>
+            <span>T</span>
+            <span>F</span>
+            <span>S</span>
+        </div>
+
+        <div *ngFor="let row of calendarTable.rows"
+             class="TodoCalendar__row">
+            <span *ngFor="let cell of row.cells"
+                  class="TodoCalendar__cell">
+                <a [class.selected]="isSelected(cell)">{{cell.date | date:'d'}}</a>
+            </span>
+        </div>
+    </section>
+
+    <ul class="TodoCalendar__list">
+
+    </ul>
+</div>

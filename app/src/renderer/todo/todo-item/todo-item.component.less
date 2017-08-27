@@ -1,0 +1,25 @@
+.TodoItem {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 11px 11px 11px 22px;
+    border-radius: 26px;
+    background: linear-gradient(to right, #3fb4fb, #83d1dd);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .13);
+
+    &__context {
+        padding-right: 6px;
+        font-size: 14px;
+        color: #fff;
+    }
+
+    &.completed {
+        background: #fff;
+
+        & > .TodoItem__context {
+            text-decoration: line-through;
+            color: rgb(197, 197, 197);
+        }
+    }
+}

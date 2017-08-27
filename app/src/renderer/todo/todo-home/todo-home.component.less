@@ -1,3 +1,48 @@
 .TodoHome {
+    padding-top: 30px;
 
+    &__calendar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 23px;
+        width: 100%;
+        height: 46px;
+
+        &Left {
+            display: inline-flex;
+            align-items: flex-start;
+            height: 100%;
+
+            & > span {
+                margin-right: 6px;
+                font-size: 40px;
+                line-height: 46px;
+                color: rgb(71, 71, 71);
+            }
+
+            & > label {
+                padding-top: 1px;
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+
+        &Right {
+
+        }
+    }
+
+    &__list {
+        display: block;
+        margin: 0;
+        padding: 30px 23px;
+
+        & > li {
+            margin: 0 0 16px 0;
+            padding: 0;
+            list-style: none;
+            display: block;
+        }
+    }
 }

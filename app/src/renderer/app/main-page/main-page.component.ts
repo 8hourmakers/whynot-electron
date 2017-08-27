@@ -15,9 +15,9 @@ interface Tab {
 })
 export class MainPageComponent {
     tabs: Tab[] = [
-        { id: 0, name: '홈', value: '' },
-        { id: 1, name: '리스트', value: 'list' },
-        { id: 2, name: '캘린더', value: 'calendar' }
+        { id: 0, name: '홈', value: '/' },
+        { id: 1, name: '리스트', value: '/list' },
+        { id: 2, name: '캘린더', value: '/calendar' }
     ];
     settingTab: Tab = {
         id: 3,

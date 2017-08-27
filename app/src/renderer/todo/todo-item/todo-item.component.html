@@ -1,0 +1,6 @@
+<div [class.completed]="completed" class="TodoItem">
+    <label class="TodoItem__context">눈썹 정리하기</label>
+    <span class="TodoItem__checkbox">
+        <app-checkbox [initChecked]="false" (toggle)="toggleCompletion($event)"></app-checkbox>
+    </span>
+</div>

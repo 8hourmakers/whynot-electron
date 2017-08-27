@@ -7,6 +7,7 @@ import { LoginPageComponent } from '../account/login-page/login-page.component';
 import { RegisterPageComponent } from '../account/register-page/register-page.component';
 
 import { TodoHomeComponent } from '../todo/todo-home/todo-home.component';
+import { TodoCalendarComponent } from '../todo/todo-calendar/todo-calendar.component';
 
 
 export const appRoutes: Routes = [
@@ -18,6 +19,18 @@ export const appRoutes: Routes = [
             {
                 path: '',
                 component: TodoHomeComponent
+            },
+            {
+                path: 'list',
+                component: TodoHomeComponent
+            },
+            {
+                path: 'calendar',
+                component: TodoCalendarComponent
+            },
+            {
+                path: '**',
+                redirectTo: '/'
             }
         ]
     },
@@ -30,6 +43,10 @@ export const appRoutes: Routes = [
         path: 'register',
         component: RegisterPageComponent,
         canActivate: [AuthenticatedGuard]
+    },
+    {
+        path: '**',
+        redirectTo: '/'
     }
 ];
 

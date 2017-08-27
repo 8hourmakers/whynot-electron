@@ -1,0 +1,22 @@
+<div class="MonthPicker">
+    <button (click)="togglePick()" class="MonthPicker__display">
+        <label>{{selection.year + '.' + (selection.month + 1)}}</label>
+        <img [src]="pickerOpened ? 'assets/up@2x.png' : 'assets/down@2x.png'" />
+    </button>
+
+    <div [class.show]="pickerOpened" class="MonthPicker__pick">
+        <nav>
+            <button (click)="navYear(-1)">&lt;</button>
+            <label>{{currentYear}}</label>
+            <button (click)="navYear(1)">&gt;</button>
+        </nav>
+
+        <ul>
+            <li *ngFor="let month of months">
+                <a (click)="selectMonth(month)" [class.selected]="isMonthSelected(month)">
+                   {{month}}
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

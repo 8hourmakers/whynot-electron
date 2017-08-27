@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
     styleUrls: ['./todo-home.component.less']
 })
 export class TodoHomeComponent {
-
+    today = new Date();
 }

@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from '../core/core.module';
 import { AccountModule } from '../account/account.module';
 import { TodoModule } from '../todo/todo.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { TodoModule } from '../todo/todo.module';
         CoreModule,
         AccountModule,
         AppRoutingModule,
+        SharedModule,
         TodoModule
     ],
     declarations: [

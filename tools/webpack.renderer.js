@@ -51,6 +51,7 @@ const config = {
                     {
                         loader: 'css-loader',
                         options: {
+                            url: false,
                             sourceMap: false,
                             importLoaders: 1
                         }
